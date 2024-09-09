@@ -4,11 +4,12 @@ import { sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from '../firebaseConfig';
 import ErrorMessage from '../Registration/ErrorMessage';
 import './ResetPasswordForm.css';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const ResetPasswordForm: React.FC = () => {
   const [email, setEmail] = useState<string>('');
   const [error, setError] = useState<string>('');
+  const navigate = useNavigate();
   const [message, setMessage] = useState<string>('');
   const [isFilled, setIsFilled] = useState<boolean>(false);
 
@@ -30,7 +31,15 @@ const ResetPasswordForm: React.FC = () => {
 
   return (
     <div id="reset-password-page" className="reset-password-page">
-      <div className="header">MyWork</div>
+      <div
+        className="header"
+        onClick={() => {
+          navigate('/home/news');
+        }}
+        style={{ cursor: 'pointer' }}
+      >
+        MyWork
+      </div>
       <div className="reset-password-form bg-dark text-white p-4 rounded">
         <h2>Reset Password</h2>
         <form onSubmit={handleSubmit}>

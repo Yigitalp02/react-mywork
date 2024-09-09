@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { getDatabase, ref, set } from 'firebase/database';
 import { auth } from '../firebaseConfig';
@@ -94,7 +94,9 @@ const RegistrationForm: React.FC = () => {
         </form>
       </div>
       <div className="footer mt-3 text-white text-center">
-        <p>Already have an account? <a href="/login">Login</a></p>
+      <p>
+          Don't have an account? <Link to="/register">Sign up</Link> {/* Use Link here */}
+        </p>
       </div>
     </div>
   );
