@@ -1,7 +1,7 @@
 // src/App.tsx
 
 import React from 'react';
-import { HashRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import './index.css';
 import { UserProvider } from './components/UserContext';
 import RegistrationForm from './components/Registration/RegistrationForm';
@@ -38,7 +38,7 @@ const AppContent: React.FC = () => {
       )}
       <div className="main-content">
         <Routes>
-          <Route path="/react-mywork" element={<Navigate to="/home/news" />} /> {/* Redirect to home page */}
+          <Route path="/" element={<Navigate to="/home/news" />} /> {/* Redirect to home page */}
           <Route path="/register" element={<RegistrationForm />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/reset-password" element={<ResetPasswordForm />} />
