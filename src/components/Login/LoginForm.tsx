@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom'; // Import Link for internal navigation
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { getDatabase, ref, get } from 'firebase/database';
 import { auth } from '../firebaseConfig';
@@ -69,11 +69,6 @@ const LoginForm: React.FC = () => {
     }
   };
 
-  // Password reset handler
-  const handlePasswordReset = () => {
-    navigate('/reset-password');
-  };
-
   return (
     <div id="login-page" className="login-page">
       <div
@@ -116,12 +111,12 @@ const LoginForm: React.FC = () => {
       </div>
       <div className="footer mt-3 text-white">
         <p>
-          Don't have an account? <a href="/register">Sign up</a>
+          Don't have an account? <Link to="/register">Sign up</Link> {/* Use Link here */}
         </p>
         <p>
-          <a href="#" className="text-primary" onClick={handlePasswordReset}>
+          <Link to="/reset-password" className="text-primary"> {/* Use Link here */}
             Forgot password?
-          </a>
+          </Link>
         </p>
       </div>
     </div>
