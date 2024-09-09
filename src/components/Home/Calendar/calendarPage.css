@@ -1,0 +1,149 @@
+#calendar-page {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 2rem 5px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  
+  #calendar-page h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  #calendar-form,
+  #calendar-event-details,
+  #calendar-event-list {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  #calendar-form input[type="text"],
+  #calendar-form textarea,
+  #calendar-form input[type="date"],
+  #calendar-form input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  #calendar-form button {
+    background-color: #A15FF4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  #calendar-form button:hover {
+    background-color: #824ac7;
+  }
+
+  #calendar-event-list .event-item {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #e8f4ff;
+    display: flex;
+    justify-content: space-between; /* Distribute space between title/date and buttons */
+    align-items: center; /* Align items in the center vertically */
+  }
+  
+  #calendar-event-list .event-item .event-details {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%; /* Ensure enough space for the buttons */
+  }
+  
+  #calendar-event-list .event-item h3 {
+    font-size: 18px;
+    margin: 0;
+    word-wrap: break-word; /* Allow the title to wrap to the next line */
+    max-width: 100%; /* Prevent the title from expanding too much */
+  }
+  
+  #calendar-event-list .event-item p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  #calendar-event-list .event-item .button-group {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+  }
+  
+  #calendar-event-list .event-item button {
+    background-color: #A15FF4;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #calendar-event-list .event-item button:hover {
+    background-color: #824ac7;
+  }
+  
+  
+  #calendar-event-details h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  #calendar-event-details p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  #calendar-event-details button {
+    background-color: #A15FF4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  #calendar-event-details button:hover {
+    background-color: #824ac7;
+  }
+  
+  /* Responsive Styles */
+@media (max-width: 768px) {
+  #calendar-page {
+    padding: 15px;
+  }
+
+  #calendar-form button,
+  #calendar-event-list .event-item button,
+  #calendar-event-details button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  #calendar-event-list .event-item {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: flex-start;
+  }
+
+  #calendar-event-list .event-item .button-group {
+    align-self: flex-end; /* Align buttons to the right on smaller screens */
+    margin-top: 10px;
+  }
+}
+  

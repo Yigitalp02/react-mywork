@@ -1,0 +1,105 @@
+/* profile.css */
+
+#profile-page {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+#profile-page .profile-container {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+}
+
+#profile-page .profile-main {
+  flex-grow: 1;
+  margin-left: 220px; /* Adjust this based on the sidebar width */
+  padding: 20px;
+  background: white; /* Add background to ensure visibility */
+  min-height: 100vh; /* Ensure full height of the viewport */
+  box-sizing: border-box;
+  overflow-x: auto; /* Enable scrolling horizontally if needed */
+}
+
+#profile-page .profile-header {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#profile-page .profile-info {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#profile-page .profile-info p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+#profile-page .profile-info .info-item {
+  margin-bottom: 20px;
+}
+
+#profile-page .profile-info .info-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+#profile-page .profile-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+#profile-page .profile-actions button {
+  padding: 10px 20px;
+  background-color: #a15ff4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#profile-page .profile-actions button:hover {
+  background-color: #8c52cc;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  #profile-page .profile-main {
+      margin-left: 0; /* Remove margin to adapt to mobile screen */
+      padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  #profile-page .profile-header {
+      font-size: 28px; /* Adjust font size for mobile */
+      text-align: center; /* Center align header text */
+  }
+
+  #profile-page .profile-info {
+      padding: 15px; /* Reduce padding for mobile */
+      font-size: 14px; /* Smaller font size for mobile */
+  }
+
+  #profile-page .profile-info p {
+      font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  #profile-page .profile-actions {
+      flex-direction: column; /* Stack action buttons vertically */
+      align-items: stretch; /* Make buttons full width */
+  }
+
+  #profile-page .profile-actions button {
+      width: 100%; /* Make buttons take up full width on mobile */
+      padding: 12px; /* Adjust padding for mobile */
+  }
+}

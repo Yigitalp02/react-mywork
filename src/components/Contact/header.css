@@ -1,0 +1,236 @@
+
+
+#header {
+  background: linear-gradient(to left, #e4c6f1, #f7e3ff);
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed; /* Keep the header fixed on larger screens */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+#header .general {
+  padding-top: 0.8%;
+  padding-left: 0.8%;
+  padding-bottom: 0.28%;
+}
+
+#header .menu-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  outline: none;
+}
+
+#header .button.nav-link {
+  background: none;
+  border: none;
+}
+
+#header .menu-button img {
+  width: 24px;
+  height: 24px;
+}
+
+#header .header-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  color: #333;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#header .navbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#header .guest-links {
+  display: flex;
+  gap: 1rem;
+}
+
+#header .nav-link {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  background: none;
+  border: none;
+  white-space: nowrap;
+  padding: 10px 15px;
+  border-radius: 35px;
+  transition: background-color 0.3s, border 0.3s;
+}
+
+#header .nav-link.active,
+#header .nav-link:hover {
+  color: #000000;
+  background-color: #9D9DFF;
+  border: 2px solid #9D9DFF;
+}
+
+#header .exit-button {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 35px;
+  padding: 10px 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#header .exit-button.active,
+#header .exit-button:hover {
+  color: #000000;
+  background-color: #9D9DFF;
+  border: 1px solid #9D9DFF;
+}
+
+#header .exit-icon {
+  width: 24px;
+  height: 24px;
+}
+
+#header .user-info {
+  display: flex;
+  align-items: center;
+}
+
+#header .user-profile-picture {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+#header .user-name {
+  font-size: 16px;
+  color: #333;
+}
+
+#header .general {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Align elements to the left */
+  width: 100%;
+}
+
+#header .navbar2 {
+  display: flex;
+  justify-content: end;
+  align-items:center; /* Align elements to the left */
+  flex-grow: 1;
+}
+/* Desktop Styles */
+#header .exit-button-mobile {
+  display: none; /* Hide the button on desktop */
+}
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  #header {
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start; /* Align everything to the left */
+    padding: 10px;
+    width: 100%;
+  }
+  #header .general{
+    flex-direction: column;
+    margin-top: 4%;
+  }
+  #header .d-flex{
+    margin-left: 2%;
+  }
+  #header .header-title{
+    margin-left: 10px;
+    padding-left: 6px;
+  }
+
+  #header .navbar2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  #header .exit-button-mobile {
+    display: block; /* Show the button only in mobile */
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin-left: 110%; /* Align to the right */
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+  #header .exit-icon-mobile {
+    width: 24px;
+    height: 24px;
+  }
+
+
+  /* Ensure the search bar remains full width */
+  #header .search-bar-container {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+    /* Hide unnecessary elements on mobile */
+    #header .user-info,
+    #header .exit-button {
+      display: none;
+    }
+  
+
+  /* Stack the nav links under the search bar */
+  #header .guest-links {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row; /* Stack the nav-links horizontally */
+    flex-wrap: nowrap;
+    gap: 10px;
+    width: 100%;
+  }
+
+  #header .nav-link {
+    font-size: 14px;
+    justify-content: flex-start;
+    padding: 8px 10px;
+    flex: 0;
+  }
+
+  /* Ensure active/hover states still work */
+  #header .nav-link:active,
+  #header .nav-link.active {
+    background-color: #8C52CC;
+     justify-content: flex-start;
+    color: #fff;
+    align-items: flex-start;
+    width: 100%;
+    white-space: nowrap;
+    border: solid #8C52CC;
+    padding-right:90% ;
+    padding-top: 8px;
+    border-radius: 0%;
+  }
+}

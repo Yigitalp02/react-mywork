@@ -1,0 +1,181 @@
+/* homeTasks.css */
+
+#home-tasks {
+  background: linear-gradient(to bottom, #faf5fc, #e3e6f0);
+  padding: 4rem;
+  margin: 6rem 2rem 2rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 95%;
+  box-sizing: border-box;
+}
+
+#home-tasks .tasks-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 2rem; /* Space between rows */
+}
+
+#home-tasks .tasks-table th, #home-tasks .tasks-table td {
+  padding: 10px;
+  text-align: left;
+  vertical-align: middle; /* Center vertically */
+}
+
+#home-tasks .tasks-table th {
+  background-color: #A15FF4;
+  color: white;
+  text-align: center; /* Center text horizontally */
+}
+
+#home-tasks .tasks-table th.key-header, #home-tasks .tasks-table td.key-cell {
+  border-radius: 55px 0px 0px 55px;
+}
+
+#home-tasks th.assignee-header{
+  border-radius: 0px 55px 55px 0px;
+}
+
+#home-tasks .tasks-table th.action-header, #home-tasks .tasks-table td.assignee {
+  border-radius: 0px 55px 55px 0px;
+
+}
+
+#home-tasks .tasks-table td.actions{
+  border-radius: 0px 55px 55px 0px;
+}
+
+#home-tasks .tasks-table td {
+  background-color: #ffffff;
+  border-right: 2px solid #e3e6f0; /* Vertical line */
+  border-left: 2px solid #e3e6f0; /* Vertical line */
+  position: relative;
+  z-index: 1;
+}
+
+#home-tasks .tasks-table td input,
+#home-tasks .tasks-table td textarea {
+  width: 100%;
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 14px;
+  padding: 5px;
+}
+
+.key-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.key-input-wrapper .key-input {
+  padding-left: 1.2rem; /* Make space for the # symbol */
+  text-align: center;
+  width: 100%; /* Ensure the input takes full width of the wrapper */
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#home-tasks .status {
+  cursor: pointer;
+  text-align: center; /* Center align the text */
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+#home-tasks .status.todo {
+  color: red;
+}
+
+#home-tasks .status.done {
+  color: green;
+}
+
+#home-tasks .status.in-progress {
+  color: blue;
+}
+
+/* Allow the summary and assignee sections to display multiple rows of text */
+#home-tasks .tasks-table td.summary textarea,
+#home-tasks .tasks-table td.assignee textarea {
+  resize: none; /* Prevent manual resizing */
+  height: auto; /* Let it adjust based on content */
+  overflow-wrap: break-word;
+  white-space: pre-wrap; /* Preserve whitespace and wrap text */
+}
+
+/* Styles for buttons */
+#home-tasks .actions {
+  text-align: center;
+}
+
+#home-tasks .delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#home-tasks .delete-button:hover {
+  background-color: darkred;
+}
+
+#home-tasks .add-task-button {
+  background-color: #a15ff4;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+#home-tasks .add-task-button:hover {
+  background-color: #8e49cc;
+}
+
+@media (max-width: 768px) {
+  #home-tasks {
+    margin: 0;
+    padding:0;
+    width: 100%; /* Full width on mobile */
+  }
+
+  #home-tasks .tasks-table {
+    display: block; /* Allow table to scroll horizontally on smaller screens */
+    overflow-x: auto;
+    width: 100%; /* Full width on mobile */
+  }
+
+  #home-tasks .tasks-table th, #home-tasks .tasks-table td {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    padding: 0px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+
+
+
+
+
+  #home-tasks .add-task-button {
+    width: 100%; /* Make the Add Task button full width */
+    border-radius: 55px;
+    margin-top: 5%;
+    margin-bottom: 0
+  }
+
+
+
+  #home-tasks .tasks-table td.summary textarea,
+  #home-tasks .tasks-table td.assignee textarea {
+    font-size: 12px; /* Adjust textarea font size */
+  }
+}

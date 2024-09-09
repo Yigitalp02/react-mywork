@@ -1,0 +1,187 @@
+#sidebar {
+  background: #e3e6f0;
+  width: 200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+#sidebar.collapsed {
+  width: 60px;
+  background-color: transparent;
+  z-index: 1;
+  opacity: 1; /* Maintain visibility but reduce interaction */
+}
+
+#sidebar .sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+#sidebar.collapsed .sidebar-header {
+  display: none;
+}
+
+#sidebar .menu-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  outline: none;
+}
+
+#sidebar .menu-button img {
+  width: 24px;
+  height: 24px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#sidebar .sidebar-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+#sidebar .sidebar-links {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  margin-top: 0rem;
+}
+
+#sidebar .sidebar-link {
+  color: #333;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  margin-right: 10%;
+  font-size: 16px;
+  text-align: left;
+  padding: 20px 13px;
+  border-radius: 35px 0px 0px 35px;
+  position: relative;
+  right: -20px;
+  width: 110%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  white-space: nowrap; /* Ensure the text stays on one line */
+}
+
+#sidebar.collapsed .sidebar-link {
+  justify-content: center;
+  padding: 10px;
+  margin-bottom: 2.2rem;
+  right: 0;
+  width: 100%;
+}
+
+#sidebar.collapsed .sidebar-link:first-child {
+  margin-top: 5.6rem; /* Ensure the first link (news icon) is not cut off */
+}
+
+#sidebar .sidebar-link.active {
+  color: #000000;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+#sidebar .sidebar-link:hover {
+  color: #000000;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+#sidebar .sidebar-icon {
+  margin-right: 10px;
+}
+
+#sidebar.collapsed .sidebar-icon {
+  margin-right: 0;
+}
+
+
+
+/* Add styles for the name above social media */
+.sidebar-name {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px; /* Reduce margin to bring it closer to social icons */
+  margin-top: auto;
+}
+
+.sidebar-social-media {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0; /* Remove extra space above social media icons */
+}
+
+
+
+#sidebar.collapsed .sidebar-social-media {
+  display: none; /* Hide social media icons when sidebar is collapsed */
+}
+
+#sidebar .social-icon {
+  width: 24px;
+  height: 24px;
+}
+
+#sidebar.collapsed .sidebar-header .menu-button {
+  display: none; /* Hide menu button when collapsed */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+
+  #sidebar.collapsed .sidebar-link {
+    display: none; /* Completely hide links when sidebar is collapsed on mobile */
+  }
+
+  #sidebar .sidebar-link {
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    font-size: 16px;
+    text-align: left;
+    padding: 20px 13px;
+    border-radius: 35px 0px 0px 35px;
+    position: relative;
+    right: -20px;
+    width: 110%;
+    margin-right: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    white-space: nowrap; /* Ensure the text stays on one line */
+  }
+
+  #sidebar .sidebar-social-media {
+    display: none; /* Hide social media icons on mobile when collapsed */
+  }
+
+
+}

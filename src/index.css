@@ -1,0 +1,90 @@
+/* Global styles */
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styles for the authentication pages */
+.auth-page {
+  background-color: #d4b7f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  position: relative;
+}
+
+.auth-page .header {
+  margin-bottom: 10px;
+  color: white;
+  font-size: 2em;  
+  font-family: Mohave;
+  text-align: center; /* Ensure text is centered */
+  width: 100%; /* Take full width of the container */
+}
+
+.auth-page .left-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+}
+
+.auth-page .left-images img {
+  display: block;
+}
+
+.auth-page .background1 {
+  position: relative;
+  width: 160px;
+  top: 50px;
+  left: 0;
+  z-index: 1;
+}
+
+.auth-page .background2 {
+  position: absolute;
+  width: 110px;
+  top: 0px;
+  left: 0;
+  z-index: 2;
+}
+
+.auth-page .main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+
+.user-info-page {
+  background-color: #2d2d44;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 320px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.user-info-page h2 {
+  color: #b8e68b;
+  margin-bottom: 20px;
+}
+
+.user-info-page p {
+  margin: 10px 0;
+}
+
+@media (max-width: 700px) {
+  .auth-page .left-images {
+    display: none;
+  }
+}

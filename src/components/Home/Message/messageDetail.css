@@ -1,0 +1,68 @@
+#message-detail-page {
+  margin: 8rem auto;
+  padding: 2rem;
+  background-color: #f8f9fa; /* Light background for the page */
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  max-width: 100rem;
+  border: 1px solid #dee2e6;
+}
+
+#message-detail-page .message-detail h2 {
+  font-size: 28px;
+  color: #343a40;
+  border-bottom: 2px solid #007bff; /* Blue underline for the title */
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#message-detail-page .messages {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #ffffff; /* White background for message list */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+#message-detail-page .message {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #e9ecef; /* Light grey background for individual messages */
+}
+
+#message-detail-page .message p {
+  margin: 0;
+}
+
+#message-detail-page .message strong {
+  color: #007bff;
+}
+
+#message-detail-page .message input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#message-detail-page .message button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#message-detail-page .message button:hover {
+  background-color: #0056b3;
+}
+
+#message-detail-page .message button:active {
+  background-color: #004085;
+}

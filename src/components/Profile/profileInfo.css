@@ -1,0 +1,130 @@
+/* profileInfo.css */
+
+#info-section {
+  background: linear-gradient(to bottom, #f2e4f8, #e3e6f0);
+  padding: 10rem;
+  border-radius: 20px;
+  box-shadow: 0 0 2rem 5px rgba(0, 0, 0, 0.1);
+  width: 55%;
+  height: 90%;
+  box-sizing: border-box;
+  margin-left: 20rem;
+  margin-top: 6rem;
+}
+
+#info-section .picture-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px; /* Space below the picture container */
+}
+
+#info-section .profile-picture {
+  width: 100px; /* Adjust the size as needed */
+  height: 100px;
+  border-radius: 50%;
+  background-color: #ccc; /* Placeholder background color */
+  margin-bottom: 10px; /* Space below the picture */
+  object-fit: cover; /* Ensure the image covers the container */
+}
+
+#info-section .change-picture-button {
+  background-color: #F5DAFF;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 35px;
+  cursor: pointer;
+}
+
+#info-section .change-picture-button:hover {
+  color: #000000;
+  background-color: #a25ff450;
+  border: 2px solid #a25ff450;
+}
+
+#info-section .success-message {
+  color: green;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#info-section .Header {
+  text-align: center;
+}
+
+#info-section .info-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#info-section .form-group {
+  margin-bottom: 15px;
+}
+
+#info-section .form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#info-section .form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#info-section .btn-primary {
+  background-color: #A15FF4;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  #info-section {
+    padding: 10%; /* Reduce padding on smaller screens */
+    margin: 2rem auto; /* Center the section and reduce margins */
+    width: 100%; /* Make the section take up more width on mobile */
+    height: auto; /* Allow height to adjust based on content */
+  }
+
+  #info-section .picture-container {
+    margin-bottom: 15px; /* Adjust space for mobile */
+  }
+
+  #info-section .profile-picture {
+    width: 80px; /* Smaller profile picture */
+    height: 80px;
+  }
+
+  #info-section .change-picture-button {
+    padding: 8px 15px; /* Reduce button size for mobile */
+  }
+
+  #info-section .Header {
+    font-size: 24px; /* Adjust header font size for mobile */
+  }
+
+  #info-section .info-form {
+    padding: 0; /* Ensure form takes full width */
+  }
+
+  #info-section .form-group {
+    margin-bottom: 10px; /* Reduce spacing between form elements */
+  }
+
+  #info-section .form-control {
+    font-size: 14px; /* Adjust font size for mobile */
+    padding: 8px; /* Adjust padding for smaller screens */
+  }
+
+  #info-section .btn-primary {
+    width: 100%; /* Make the button take up full width on mobile */
+    padding: 12px; /* Adjust padding */
+  }
+}

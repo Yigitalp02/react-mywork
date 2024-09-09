@@ -1,0 +1,214 @@
+/* profileTasks.css */
+
+#profile-tasks {
+  background: linear-gradient(to bottom, #faf5fc, #e3e6f0);
+  padding: 4rem;
+  margin: 8rem 2rem 2rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 95%;
+  box-sizing: border-box;
+}
+
+#profile-tasks .tasks-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 2rem; /* Space between rows */
+}
+
+#profile-tasks .tasks-table th, #profile-tasks .tasks-table td {
+  padding: 10px;
+  text-align: left;
+  vertical-align: middle; /* Center vertically */
+}
+
+#profile-tasks .tasks-table th {
+  background-color: #A15FF4;
+  color: white;
+  border-right: 2px solid #ffffff;
+  text-align: center; /* Center text horizontally */
+}
+
+#profile-tasks .tasks-table th.action-header {
+  border-radius: 0px 55px 55px 0px;
+}
+
+#profile-tasks .tasks-table th.key-header {
+  border-radius: 55px 0px 0px 55px;
+}
+
+#profile-tasks .tasks-table td {
+  background-color: #ffffff;
+  border-right: 2px solid #e3e6f0; /* Vertical line */
+  border-left: 2px solid #e3e6f0; /* Vertical line */
+  position: relative;
+  z-index: 1;
+}
+
+#profile-tasks .tasks-table td input,
+#profile-tasks .tasks-table td textarea {
+  width: 100%;
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 14px;
+  padding: 5px;
+}
+
+.key-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.key-cell {
+  width: 10%;
+  border-radius: 55px 0px 0px 55px;
+}
+
+.key-hash {
+  position: absolute;
+  left: 1.5rem;
+  font-weight: bold;
+}
+
+.key-input-wrapper .key-input {
+  padding-left: 1.2rem; /* Make space for the # symbol */
+  text-align: center;
+  width: calc(100% - 2rem); /* Ensure the input takes full width of the wrapper, minus space for the # symbol */
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#profile-tasks .key-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.5rem; /* Adjust spacing as needed */
+}
+
+#profile-tasks .key-buttons button {
+  background-color: #e3e6f0;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 2px;
+  width: 20px;
+  margin: 1px 0;
+}
+
+#profile-tasks .key-buttons button:hover {
+  background-color: #d1d5db;
+}
+
+#profile-tasks .status {
+  cursor: pointer;
+  width: 15%; /* Adjust width as needed */
+  text-align: center; /* Center align the text */
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+#profile-tasks .status.todo {
+  color: red;
+}
+
+#profile-tasks .status.done {
+  color: green;
+}
+
+#profile-tasks .status.in-progress {
+  color: blue;
+}
+
+#profile-tasks .tasks-table tr:last-child td {
+  border-bottom: none;
+}
+
+#profile-tasks .tasks-table tr td:last-child {
+  border-right: none;
+}
+
+/* Allowing the summary and comment sections to display multiple rows of text */
+#profile-tasks .tasks-table td.summary textarea,
+#profile-tasks .tasks-table td.comment textarea {
+  resize: none; /* Prevent manual resizing */
+  height: auto; /* Let it adjust based on content */
+  overflow-wrap: break-word;
+  white-space: pre-wrap; /* Preserve whitespace and wrap text */
+}
+
+/* Styles for the delete button */
+#profile-tasks .actions {
+  text-align: center;
+  border-radius: 0px 55px 55px 0px;
+}
+
+#profile-tasks .delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#profile-tasks .delete-button:hover {
+  background-color: darkred;
+}
+
+#profile-tasks .add-task-button {
+  background-color: #A15FF4;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+#profile-tasks .add-task-button:hover {
+  background-color: #8E49CC;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  #profile-tasks {
+    margin: 0;
+    padding:0;
+    width: 100%; /* Full width on mobile */
+  }
+
+  #profile-tasks .tasks-table {
+    display: block; /* Allow table to scroll horizontally on smaller screens */
+    overflow-x: auto;
+    width: 100%; /* Full width on mobile */
+  }
+
+  #profile-tasks .tasks-table th, #profile-tasks .tasks-table td {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    padding: 8px;
+  }
+
+
+
+  #profile-tasks .add-task-button {
+    width: 100%; /* Make the Add Task button full width */
+    border-radius: 55px;
+    margin-top: 5%;
+    margin-bottom: 0
+  }
+
+
+
+  #profile-tasks .tasks-table td.summary textarea,
+  #profile-tasks .tasks-table td.comment textarea {
+    font-size: 12px; /* Adjust textarea font size */
+  }
+
+ 
+}

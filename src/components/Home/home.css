@@ -1,0 +1,81 @@
+/* home.css */
+
+#home-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Home Container */
+#home-page .home-container {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  flex-wrap: wrap; /* Enable wrapping in smaller screens */
+}
+
+/* Home Main Content */
+#home-page .home-main {
+  flex-grow: 1;
+  margin-left: 220px; /* Adjust this based on the sidebar width */
+  padding: 20px;
+  background: white;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding-top: 5%; /* Adjust this to the height of the fixed header */
+}
+
+@media (max-width: 768px) {
+  #home-page .home-main {
+    margin-left: 0; /* Remove left margin on mobile */
+    padding: 10px;
+
+  }
+}
+
+/* Home Bottom Section */
+#home-page .home-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+#home-page .status-section,
+#home-page .persons-section {
+  padding: 20px;
+  background: linear-gradient(to bottom, #e3e6f0, #e9ebf1);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Add some spacing */
+}
+
+/* Status Section */
+#home-page .status-section {
+  flex: 2;
+  margin-right: 20px;
+}
+
+#home-page .persons-section {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  /* Make sections stack on top of each other in smaller screens */
+  #home-page .home-bottom {
+    flex-direction: column;
+  }
+
+  /* Adjust sections width for smaller screens */
+  #home-page .status-section,
+  #home-page .persons-section {
+    flex: 1;
+    width: 100%; /* Make sections take full width */
+    margin-right: 0;
+  }
+}
+
+

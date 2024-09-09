@@ -1,0 +1,111 @@
+/* profileHeader.css */
+
+#profile-header {
+  background: linear-gradient(to left, #f4daff99, #ffffff00);
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+#profile-header .search-bar-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+#profile-header .search-bar {
+  position: relative;
+  width: 50%;
+  max-width: 400px;
+}
+
+#profile-header .search-input {
+  width: 100%;
+  padding: 10px 10px 10px 40px; /* Adjust padding for the icon */
+  border: 1px solid #ccc;
+  border-radius: 35px;
+}
+
+#profile-header .search-icon {
+  position: absolute;
+  left: 10px; /* Position the icon inside the input */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none; /* Allows clicks to pass through */
+}
+
+#profile-header .navbar {
+  display: flex;
+  align-items: center;
+}
+
+#profile-header .nav-link {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 10px;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 35px;
+  transition: background-color 0.3s, border 0.3s; /* Add transition for smooth effect */
+}
+
+#profile-header .nav-link.active,
+#profile-header .nav-link:hover {
+  color: #000000;
+  background-color: #9D9DFF;
+  border: 2px solid #9D9DFF;
+}
+
+#profile-header .exit-button {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 35px;
+  padding: 10px 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, border 0.3s; /* Add transition for smooth effect */
+}
+
+#profile-header .exit-button.active,
+#profile-header .exit-button:hover {
+  color: #000000;
+  background-color: #9D9DFF;
+  border: 2px solid #9D9DFF;
+}
+
+#profile-header .exit-icon {
+  width: 24px;
+  height: 24px;
+}
+
+#profile-header .user-info {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+#profile-header .user-profile-picture {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+#profile-header .user-name {
+  font-size: 16px;
+  color: #333;
+}

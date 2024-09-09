@@ -1,0 +1,57 @@
+#status-section {
+  width: 100%;
+}
+
+#status-section h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#status-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#status-section th,
+#status-section td {
+  padding: 10px;
+  text-align: left;
+}
+
+#status-section th.task-title,
+#status-section td.task-title {
+  width: 10%; /* Adjusted width for chronological numbers */
+  text-align: left;
+}
+
+#status-section th.task-desc,
+#status-section td.task-desc {
+  width: 60%; /* Adjusted width */
+  text-align: left;
+}
+
+#status-section th.task-status,
+#status-section td.task-status {
+  width: 30%;
+  text-align: right;
+}
+
+#status-section th {
+  padding-bottom: 20px;
+}
+
+#status-section td {
+  padding-top: 20px;
+}
+
+#status-section .task-status.to-do {
+  font-weight: bold;
+  color: rgb(255, 0, 0); /* Orange for TO DO */
+}
+
+#status-section .task-status.in-progress {
+  font-weight: bold;
+  color: rgb(30, 144, 255); /* Dodger Blue for IN PROGRESS */
+}

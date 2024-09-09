@@ -1,0 +1,19 @@
+.create-new-title {
+    margin-top: 2rem;
+  }
+  
+  .create-new-title h2 {
+    font-size: 24px;
+    color: #007bff;
+  }
+  
+  .create-new-title .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .create-new-title .button-group {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+  

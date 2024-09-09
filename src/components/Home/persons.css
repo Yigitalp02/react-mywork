@@ -1,0 +1,43 @@
+/* persons.css */
+
+#persons-section {
+  background: linear-gradient(to bottom, #faf5fc, #e3e6f0);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
+}
+
+#persons-section h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#persons-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#persons-section ul li {
+  font-size: 16px;
+  color: #333;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  display: flex; /* Added to align items in a row */
+  align-items: center; /* Center align items vertically */
+}
+
+#persons-section ul li:last-child {
+  border-bottom: none;
+}
+
+/* Added styles for profile pictures */
+.person-item .profile-picture {
+  width: 30px; /* Adjust size as needed */
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px; /* Space between image and name */
+}

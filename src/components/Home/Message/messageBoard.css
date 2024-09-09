@@ -1,0 +1,52 @@
+ /* messageBoard.css */
+
+ #message-board .message-board {
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 35px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#message-board .message-list {
+  margin-bottom: 20px;
+}
+#message-board .create-new-title h2 {
+  color: #A15FF4;
+}
+
+#message-board .message-item {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+#message-board .create-new-title {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#message-board .create-new-title input,
+.create-new-title textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+#message-board .create-new-title button {
+  background-color: #A15FF4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#message-board .create-new-title button:hover {
+  background-color: #6228a8;
+}

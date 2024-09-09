@@ -1,0 +1,82 @@
+/* latestNews.css */
+
+#latest-news {
+  width: 100%;
+  margin-top: 2%;
+  
+}
+
+#latest-news h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+#latest-news .hot-topic {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+#latest-news .hot-topic:hover {
+  transform: scale(1.02); /* Enlarge on hover */
+}
+
+#latest-news .hot-topic-image {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+#latest-news .hot-topic-details {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  color: rgb(0, 0, 0);
+}
+
+#latest-news .hot-topic-details h3 {
+  font-size: 20px;
+  margin: 0;
+}
+
+#latest-news .latest-news-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+#latest-news .latest-news-item {
+  flex: 1;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+#latest-news .latest-news-item:last-child {
+  margin-right: 0;
+}
+
+#latest-news .latest-news-item:hover {
+  transform: scale(1.05); /* Enlarge on hover */
+}
+
+#latest-news .latest-news-image {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+#latest-news p {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+}
