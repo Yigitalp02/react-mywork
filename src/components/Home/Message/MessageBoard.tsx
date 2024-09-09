@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { getDatabase, ref, onValue, push, set, get } from 'firebase/database';
+import { getDatabase, ref, onValue, push, set} from 'firebase/database';
 import MessageList from './MessageList';
 import CreateNewTitle from './CreateNewTitle';
 import { UserContext } from '../../UserContext';

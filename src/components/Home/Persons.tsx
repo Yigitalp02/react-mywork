@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getDatabase, ref, onValue } from 'firebase/database';
-import { UserContext } from '../UserContext';
 import './persons.css';
 
 interface User {
@@ -12,7 +11,6 @@ interface User {
 
 const Persons: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]); // Kullanıcılar için durum tanımlanıyor
-  const userContext = useContext(UserContext); // Kullanıcı bilgilerini context'ten alır
 
   // Bileşen yüklendiğinde kullanıcı verilerini almak için useEffect kullanılır
   useEffect(() => {

@@ -1,7 +1,6 @@
 // src/components/AdminAboutUs.tsx
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect} from 'react';
 import { getDatabase, ref, onValue, set } from 'firebase/database';
-import { UserContext } from '../UserContext';
 import Header from '../Contact/Header';
 import './aboutus.css';
 import { loadBootstrap } from '../../loadBootstrap.tsx';
@@ -9,7 +8,6 @@ import { loadBootstrap } from '../../loadBootstrap.tsx';
 const AdminAboutUs: React.FC = () => {
   const [text, setText] = useState<string>('');
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
-  const { user } = useContext(UserContext) || {};
 
   useEffect(() => {
     loadBootstrap();

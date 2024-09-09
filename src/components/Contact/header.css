@@ -206,13 +206,16 @@
   #header .guest-links {
     display: flex;
     justify-content: flex-start;
-    flex-direction: row; /* Stack the nav-links horizontally */
+    flex-direction: column; /* Stack the nav-links horizontally */
     flex-wrap: nowrap;
     gap: 10px;
     width: 100%;
   }
 
   #header .nav-link {
+    display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
     font-size: 14px;
     justify-content: flex-start;
     padding: 8px 10px;

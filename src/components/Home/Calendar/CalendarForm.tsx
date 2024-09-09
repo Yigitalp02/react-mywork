@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import { CalendarEvent } from './types'; // Import the type from types.ts
 
 interface CalendarFormProps {
