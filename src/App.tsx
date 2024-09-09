@@ -38,7 +38,7 @@ const AppContent: React.FC = () => {
       )}
       <div className="main-content">
         <Routes>
-          <Route path="/" element={<Navigate to="/home/news" />} /> {/* Redirect to home page */}
+          <Route path="/react-mywork" element={<Navigate to="/home/news" />} /> {/* Redirect to home page */}
           <Route path="/register" element={<RegistrationForm />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/reset-password" element={<ResetPasswordForm />} />
