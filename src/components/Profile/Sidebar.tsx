@@ -51,9 +51,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar, onTasks
           <img src={menuIcon} alt="Menu" className="sidebar-icon" />
         </button>
         {isSidebarOpen && (
-          <Link to="/home" className="sidebar-title"> {/* Use Link here */}
-          MyWork
-          </Link>
+           <button className="sidebar-title" onClick={() => window.location.href = '/react-mywork/#/home/news'}>MyWork</button>
         )}
       </div>
       <div className="sidebar-links">
