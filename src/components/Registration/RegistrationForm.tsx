@@ -94,8 +94,8 @@ const RegistrationForm: React.FC = () => {
         </form>
       </div>
       <div className="footer mt-3 text-white text-center">
-      <p>
-          Don't have an account? <Link to="/register">Sign up</Link> {/* Use Link here */}
+        <p>
+        Already have an account? <Link to="/login">Login</Link> {/* Use Link here */}
         </p>
       </div>
     </div>
