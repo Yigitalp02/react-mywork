@@ -1,7 +1,7 @@
 // src/App.tsx
 
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import './index.css';
 import { UserProvider } from './components/UserContext';
 import RegistrationForm from './components/Registration/RegistrationForm';
