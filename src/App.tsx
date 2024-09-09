@@ -1,7 +1,5 @@
-// src/App.tsx
-
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom'; // Use HashRouter
 import './index.css';
 import { UserProvider } from './components/UserContext';
 import RegistrationForm from './components/Registration/RegistrationForm';
@@ -10,13 +8,13 @@ import ResetPasswordForm from './components/Login/ResetPasswordForm';
 import Home from './components/Home/Home';
 import Contact from './components/Contact/Contact';
 import AboutUs from './components/Aboutus/AboutUs';
-import AdminAboutUs from './components/Aboutus/AdminAbouUs'; // Fixed typo here as well
+import AdminAboutUs from './components/Aboutus/AdminAbouUs';
 import Profile from './components/Profile/Profile';
 import background2 from './icons/background1.png';
 import background1 from './icons/background2.png';
 
 const App: React.FC = () => (
-  <Router basename="/react-mywork"> {/* Add basename to account for GitHub Pages deployment */}
+  <Router>
     <UserProvider>
       <AppContent />
     </UserProvider>
