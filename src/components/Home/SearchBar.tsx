@@ -15,6 +15,8 @@ const subPages = [
   { name: 'Message Board', path: '/home/message-board' },
 ];
 
+const secretCode = 'TooSecret';
+
 const SearchBar: React.FC = () => {
   const [query, setQuery] = useState('');
   const [filteredPages, setFilteredPages] = useState(subPages);
@@ -25,16 +27,20 @@ const SearchBar: React.FC = () => {
     setQuery(input);
 
     if (input) {
-      const filtered = subPages
-        .filter((page) =>
-          page.name.toLowerCase().includes(input.toLowerCase())
-        )
-        .sort((a, b) => {
-          if (a.name.toLowerCase().startsWith(input.toLowerCase())) return -1;
-          if (b.name.toLowerCase().startsWith(input.toLowerCase())) return 1;
-          return 0;
-        });
-      setFilteredPages(filtered);
+      if (input.toLowerCase() === secretCode.toLowerCase()) {
+        setFilteredPages([]); // Don't show any result when the secret code is typed
+      } else {
+        const filtered = subPages
+          .filter((page) =>
+            page.name.toLowerCase().includes(input.toLowerCase())
+          )
+          .sort((a, b) => {
+            if (a.name.toLowerCase().startsWith(input.toLowerCase())) return -1;
+            if (b.name.toLowerCase().startsWith(input.toLowerCase())) return 1;
+            return 0;
+          });
+        setFilteredPages(filtered);
+      }
     } else {
       setFilteredPages(subPages);
     }
@@ -46,6 +52,13 @@ const SearchBar: React.FC = () => {
     setFilteredPages(subPages);
   };
 
+  const handleSearchSubmit = () => {
+    if (query.toLowerCase() === secretCode.toLowerCase()) {
+      navigate('/snake-game'); // Navigate to the Snake Game page
+      setQuery(''); // Clear the input
+    }
+  };
+
   return (
     <div className="search-bar-container">
       <img src={searchIcon} alt="Search" className="search-icon" />
@@ -54,6 +67,11 @@ const SearchBar: React.FC = () => {
         placeholder="Search"
         value={query}
         onChange={handleInputChange}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            handleSearchSubmit();
+          }
+        }}
         className="search-input"
       />
       {query && (

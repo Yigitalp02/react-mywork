@@ -12,6 +12,7 @@ import AdminAboutUs from './components/Aboutus/AdminAbouUs';
 import Profile from './components/Profile/Profile';
 import background2 from './icons/background1.png';
 import background1 from './icons/background2.png';
+import SnakesGame from './components/SnakesGame/SnakeGame'; // Import Snake Game
 
 const App: React.FC = () => (
   <Router>
@@ -45,6 +46,7 @@ const AppContent: React.FC = () => {
           <Route path="/admin-about" element={<AdminAboutUs />} />
           <Route path="/profile/*" element={<Profile />} />
           <Route path="/home/*" element={<Home />} />
+          <Route path="/snake-game" element={<SnakesGame />} /> {/* Add Snake Game route */}
         </Routes>
       </div>
     </div>
