@@ -405,7 +405,7 @@ render() {
       />
       <div id="Score" style={{ fontSize: this.state.width / 20 }}>
         HIGH-SCORE: {this.state.highScore}&ensp;&ensp;&ensp;&ensp;SCORE: {this.state.score}
-        <button className="home-button" onClick={() => window.location.href = '/home'}>
+        <button className="home-button" onClick={() => window.location.href = '/react-mywork'}>
           Go to Home
         </button>
         {/* Mobile Pause Button */}
