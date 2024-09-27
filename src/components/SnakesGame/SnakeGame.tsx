@@ -81,20 +81,18 @@ class SnakeGame extends React.Component<SnakeGameProps, SnakeGameState> {
   }
 
   initGame() {
-    let percentageWidth = this.props.percentageWidth || 40;
-    let width = Math.floor(
-      document.getElementById('GameBoard')?.parentElement?.offsetWidth! *
-        (percentageWidth / 100)
-    );
-    width -= width % 30;
-    if (width < 30) width = 30;
+    // Set dimensions based on screen size
+    let width = window.innerWidth <= 768 ? window.innerWidth * 0.9 : window.innerWidth * 0.4;
+    width = Math.floor(width - (width % 30)); // Ensure width is divisible by 30
 
     let height = (width / 3) * 2;
-    let blockWidth = width / 30;
-    let blockHeight = height / 20;
+    height = Math.floor(height - (height % 20)); // Ensure height is divisible by 20
 
-    let startSnakeSize = this.props.startSnakeSize || 6;
-    let snake: SnakePart[] = [];
+    const blockWidth = width / 30;
+    const blockHeight = height / 20;
+
+    const startSnakeSize = this.props.startSnakeSize || 6;
+    const snake: SnakePart[] = [];
     let Xpos = width / 2;
     const Ypos = height / 2;
 
@@ -343,9 +341,21 @@ class SnakeGame extends React.Component<SnakeGameProps, SnakeGameState> {
     }
   }
 
-  render() {
-    if (this.state.isGameOver) {
-      return (
+render() {
+  const isMobile = window.innerWidth <= 768; // Check if the screen width is less than or equal to 768px
+
+  // Define the game over message based on whether it's mobile or desktop mode
+  const gameOverMessage = isMobile
+    ? "Tap the screen to restart!"
+    : "Press space to restart!";
+
+  if (this.state.isGameOver) {
+    return (
+      <div
+        id="GameSpace"
+        onClick={isMobile ? () => this.resetGame() : undefined} // Restart the game on click for mobile users
+        style={{ cursor: isMobile ? 'pointer' : 'default' }} // Change cursor style to indicate interactivity on mobile
+      >
         <GameOver
           width={this.state.width}
           height={this.state.height}
@@ -353,54 +363,78 @@ class SnakeGame extends React.Component<SnakeGameProps, SnakeGameState> {
           newHighScore={this.state.newHighScore}
           score={this.state.score}
         />
-      );
-    }
+        <div id="GameOverMessage" style={{ fontSize: '1.5rem', color: '#ca0000', fontWeight: 'bold', textAlign: 'center' }}>
+          {gameOverMessage}
+        </div>
 
-    return (
-      <div
-        id="GameBoard"
-        style={{
-          width: this.state.width,
-          height: this.state.height,
-          borderWidth: this.state.width / 50,
-        }}
-      >
-        {this.state.snake.map((snakePart, index) => (
-          <div
-            key={index}
-            className="Block"
-            style={{
-              width: this.state.blockWidth,
-              height: this.state.blockHeight,
-              left: snakePart.Xpos,
-              top: snakePart.Ypos,
-              background: this.state.snakeColor,
-            }}
-          />
-        ))}
+      </div>
+    );
+  }
+
+  return (
+    <div
+      id="GameBoard"
+      style={{
+        width: this.state.width,
+        height: this.state.height,
+        borderWidth: this.state.width / 50,
+      }}
+    >
+      {this.state.snake.map((snakePart, index) => (
         <div
+          key={index}
           className="Block"
           style={{
             width: this.state.blockWidth,
             height: this.state.blockHeight,
-            left: this.state.apple.Xpos,
-            top: this.state.apple.Ypos,
-            background: this.state.appleColor,
+            left: snakePart.Xpos,
+            top: snakePart.Ypos,
+            background: this.state.snakeColor,
           }}
         />
-        <div id="Score" style={{ fontSize: this.state.width / 20 }}>
-          HIGH-SCORE: {this.state.highScore}&ensp;&ensp;&ensp;&ensp;SCORE: {this.state.score}
-          <button className="home-button" onClick={() => window.location.href = '/react-mywork'}>
-            Go to Home
+      ))}
+      <div
+        className="Block"
+        style={{
+          width: this.state.blockWidth,
+          height: this.state.blockHeight,
+          left: this.state.apple.Xpos,
+          top: this.state.apple.Ypos,
+          background: this.state.appleColor,
+        }}
+      />
+      <div id="Score" style={{ fontSize: this.state.width / 20 }}>
+        HIGH-SCORE: {this.state.highScore}&ensp;&ensp;&ensp;&ensp;SCORE: {this.state.score}
+        <button className="home-button" onClick={() => window.location.href = '/home'}>
+          Go to Home
+        </button>
+        {/* Mobile Pause Button */}
+        {isMobile && (
+          <button
+            className="pause-button"
+            onClick={() => this.setState({ isPaused: !this.state.isPaused })}
+          >
+            {this.state.isPaused ? "Resume Game" : "Pause Game"}
           </button>
-        </div>
-
-        {this.state.isPaused && (
-          <PausedModal setIsPaused={() => this.setState({ isPaused: false })} />
         )}
       </div>
-    );
-  }
+
+      {this.state.isPaused && <PausedModal setIsPaused={() => this.setState({ isPaused: false })} />}
+
+      {/* Mobile Direction Buttons */}
+      {isMobile && (
+        <div className="direction-buttons">
+          <button className="direction-button up" onClick={() => this.goUp()}>↑</button>
+          <div className="horizontal-buttons">
+            <button className="direction-button left" onClick={() => this.goLeft()}>←</button>
+            <button className="direction-button right" onClick={() => this.goRight()}>→</button>
+          </div>
+          <button className="direction-button down" onClick={() => this.goDown()}>↓</button>
+        </div>
+      )}
+    </div>
+  );
+}
 }
 
 export default SnakeGame;

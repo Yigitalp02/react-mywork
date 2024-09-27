@@ -3,6 +3,7 @@
     inset: 0;
     background-color: hsla(0, 0%, 10%, 0.7);
     cursor: pointer;
+    z-index: 999; /* Ensure it's above all other elements */
   }
   
   #paused-modal {
