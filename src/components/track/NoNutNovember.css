@@ -1,0 +1,19 @@
+/* NoNutNovember.css */
+
+#no-nut-november {
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, #cad3f0, #e9ebf1) !important;
+  }
+  
+  #no-nut-november h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    #no-nut-november h1 {
+      font-size: 1.5rem;
+    }
+  }
+  

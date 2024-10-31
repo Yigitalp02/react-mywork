@@ -17,6 +17,7 @@ const subPages = [
 
 const secretCode = 'TooSecret';
 
+
 const SearchBar: React.FC = () => {
   const [query, setQuery] = useState('');
   const [filteredPages, setFilteredPages] = useState(subPages);

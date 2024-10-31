@@ -1,0 +1,53 @@
+/* AddProfile.css */
+
+#add-profile {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #add-profile h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  #add-profile .input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  #add-profile .add-profile-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #add-profile .add-profile-btn:disabled {
+    background-color: #ccc;
+  }
+  
+  #add-profile .add-profile-btn:hover:not(:disabled) {
+    background-color: #218838;
+  }
+  
+  @media (max-width: 768px) {
+    #add-profile h2 {
+      font-size: 1.5rem;
+    }
+  
+    #add-profile .add-profile-btn {
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  }
+  

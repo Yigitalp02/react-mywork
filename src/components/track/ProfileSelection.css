@@ -1,0 +1,83 @@
+/* ProfileSelection.css */
+
+#profile-selection {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #profile-selection h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  #profile-selection .profile-list {
+    display: flex;
+    flex-direction: column; /* Stack profiles vertically */
+    gap: 20px;
+    align-items: center; /* Center align profiles */
+    margin-bottom: 20px; /* Add margin below the list */
+  }
+  
+  #profile-selection .profile-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+  
+  #profile-selection .profile-item:hover {
+    transform: scale(1.05);
+  }
+  
+  #profile-selection .profile-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px; /* Space between photo and name */
+    object-fit: cover; /* Ensure photo fits nicely */
+  }
+  
+  #profile-selection .profile-name {
+    font-size: 1.2rem;
+    color: #333;
+    text-align: left; /* Align name to the left */
+  }
+  
+  #profile-selection .add-profile {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #profile-selection .add-profile:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    #profile-selection .profile-item {
+      width: 90%; /* Make profile items take up more space on smaller screens */
+    }
+  
+    #profile-selection .profile-photo {
+      width: 60px;
+      height: 60px;
+      margin-right: 15px;
+    }
+  
+    #profile-selection .profile-name {
+      font-size: 1rem;
+    }
+  }
+  

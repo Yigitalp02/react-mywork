@@ -1,0 +1,134 @@
+/* ChallengePage.css */
+
+#challenge-page {
+    padding: 20px;
+    text-align: center;
+
+  }
+  
+  #challenge-page h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  #challenge-page .go-back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    background-color: #2c3e50 ;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  #challenge-page .go-back-button:hover {
+    background-color: #496785;
+  }
+  
+  #challenge-page .profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+  
+  /* Wrapper for content sections */
+  .content-wrapper {
+    background: linear-gradient(to bottom, #e3e6f0, #e9ebf1);
+    padding: 20px;
+    margin: 20px auto; /* Add space between sections */
+    border-radius: 35px; /* Rounded corners for a softer look */
+    max-width: 600px; /* Limit the width for better readability */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  }
+  
+  #challenge-page .status-selection {
+    margin-bottom: 10px;
+  }
+  
+  #challenge-page .status-selection button {
+    margin: 0 10px;
+    padding: 15px 25px;
+    background-color: #2c3e50;
+    color: #DEE2FF;
+    border-radius: 35px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #challenge-page .status-selection button:hover {
+    background-color: #496785;
+  }
+  
+  #challenge-page .participants {
+    margin-top: 20px;
+  }
+  
+  #challenge-page h3 {
+    margin-bottom: 10px;
+  }
+  
+  #challenge-page .participants-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 2rem;
+    width: 100%; /* Ensure the list takes full width */
+  }
+  
+  #challenge-page .participant {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    width: 300px; /* Set a fixed width for consistency across all items */
+  }
+  
+  #challenge-page .participant-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px; /* Space between photo and name */
+  }
+  
+  #challenge-page .participant p {
+    flex: 1;
+    text-align: left;
+  }
+
+  #challenge-page .go-back-button .mobile-icon {
+    display: none; /* Hide the text label in mobile mode */
+  }
+  
+/* Mobile-specific changes */
+@media (max-width: 768px) {
+    
+    #challenge-page .go-back-button {
+        top: 10px; /* Adjust positioning to avoid overlapping the title */
+        left: 10px;
+        padding: 0; /* Remove padding for a more compact icon */
+        border-radius: 50%; /* Circular button look for the icon */
+        background-color: transparent; /* Make background completely transparent */
+        box-shadow: none; /* Remove any shadow effect */
+      }
+    
+      #challenge-page .go-back-button .desktop-label {
+        display: none; /* Hide the text label in mobile mode */
+      }
+    
+      #challenge-page .go-back-button .mobile-icon {
+        display: block; /* Show only the icon in mobile mode */
+        font-size: 1.5rem;
+        color: #007bff; /* Blue color for the icon */
+      }
+
+    #challenge-page h2 {
+      font-size: 1.5rem;
+      margin-top: 60px; /* Add margin to ensure no overlap */
+    }
+  }
+  
