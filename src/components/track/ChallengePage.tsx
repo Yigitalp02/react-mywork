@@ -1,4 +1,3 @@
-// ChallengePage.tsx
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { getDatabase, ref as databaseRef, onValue, update } from 'firebase/database';
@@ -13,6 +12,7 @@ interface Profile {
 
 interface Participant extends Profile {
   status: 'in' | 'out';
+  attirdimCount?: number;
 }
 
 const getTimeLeft = () => {
@@ -73,13 +73,23 @@ const ChallengePage: React.FC = () => {
     await update(participantRef, { status: newStatus });
   };
 
+  const handleIncrementAttirdim = async () => {
+    const participantRef = databaseRef(database, `participants/${profile.id}`);
+    const currentParticipant = participants.find((p) => p.id === profile.id);
+
+    if (currentParticipant && currentParticipant.status === 'out') {
+      const newCount = (currentParticipant.attirdimCount || 0) + 1;
+      await update(participantRef, { attirdimCount: newCount });
+    }
+  };
+
   return (
     <div id="challenge-page">
       {/* Go Back Button */}
       <button className="go-back-button" onClick={() => navigate('/tracker/profile-selection')}>
         <span className="desktop-label">Go Back</span>
         <button className="mobile-icon">
-            <img src={backIcon} alt="back" className="mobile-icon" />
+          <img src={backIcon} alt="back" className="mobile-icon" />
         </button>
       </button>
 
@@ -108,6 +118,7 @@ const ChallengePage: React.FC = () => {
         <div className="status-selection">
           <button onClick={() => handleStatusChange('in')}>Still In</button>
           <button onClick={() => handleStatusChange('out')}>Lost</button>
+          <button onClick={handleIncrementAttirdim}>Attırdım</button>
         </div>
       </div>
 
@@ -122,6 +133,9 @@ const ChallengePage: React.FC = () => {
                 <div key={p.id} className="participant">
                   <img src={p.profilePhotoUrl} alt={p.name} className="participant-photo" />
                   <p>{p.name}</p>
+                  <p className="attirdim-count">
+                    {p.attirdimCount ? `Attırdım: ${p.attirdimCount}` : 'Attırdım: 0'}
+                  </p>
                 </div>
               ))}
           </div>
@@ -134,6 +148,9 @@ const ChallengePage: React.FC = () => {
                 <div key={p.id} className="participant">
                   <img src={p.profilePhotoUrl} alt={p.name} className="participant-photo" />
                   <p>{p.name}</p>
+                  <p className="attirdim-count">
+                    {p.attirdimCount ? `Attırdım: ${p.attirdimCount}` : 'Attırdım: 0'}
+                  </p>
                 </div>
               ))}
           </div>
